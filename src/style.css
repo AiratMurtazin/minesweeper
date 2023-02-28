@@ -4,13 +4,33 @@
 	box-sizing: border-box;
 }
 
-.first {
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.container {
+	width: 451px;
+	height: 522px;
+	background-color: #bdbdbd;
+}
+
+.header {
+	width: 425px;
+	height: 56px;
+	background-color: #c0c0c0;
+	margin: 0 auto;
+	margin-top: 8px;
+}
+.one {
 	width: 13px;
 	height: 24px;
 	background: url(../assets/icons/minesweeper-sprites.png) 0 0;
 }
 
-.second {
+.two {
 	width: 13px;
 	height: 24px;
 	background: url(../assets/icons/minesweeper-sprites.png) -15px 0;
