@@ -1,0 +1,17 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.first {
+	width: 13px;
+	height: 24px;
+	background: url(../assets/icons/minesweeper-sprites.png) 0 0;
+}
+
+.second {
+	width: 13px;
+	height: 24px;
+	background: url(../assets/icons/minesweeper-sprites.png) -15px 0;
+}
