@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	const first = document.querySelector('.first');
 	const second = document.querySelector('.second');
 	const third = document.querySelector('.third');
+	const flagsLeftTens = document.querySelector('.flags-left-tens');
+	const flagsLeftOnes = document.querySelector('.flags-left-ones');
 	let width = 16;
 	let bombAmount = 40;
 	let flags = 0;
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let count = 0;
 	let tens = 0;
 	let hunds = 0;
+	//TODO stop the timer
 	function startTimer() {
 		if (count <= 9) {
 			first.className = `num tablo-${count++} first`;
@@ -58,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		setTimeout(() => {
 			third.className = `num tablo-${hunds++} second`;
 		}, 100000);
+
 		// setInterval(() => {}, 10000);
 	}
 
@@ -98,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			);
 			square.oncontextmenu = function (e) {
 				e.preventDefault();
-				addFlag(ele);
+				addFlag(square);
 			};
 		}
 
@@ -217,29 +221,27 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	createBoard();
 
-	// function addFlag(square) {
-	// 	if (isGameOver) return;
-	// 	if (!square.classList.contains('checked') && flags < bombAmount) {
-	// 		if (!square.classList.contains('flag')) {
-	// 			square.classList.add('flag');
-	// 			square.innerHTML = ' 🚩';
-	// 			flags++;
-	// 			// flagsLeft.innerHTML = bombAmount - flags;
-	// 			checkForWin();
-	// 		} else {
-	// 			square.classList.remove('flag');
-	// 			square.innerHTML = '';
-	// 			flags--;
-	// 			// flagsLeft.innerHTML = bombAmount - flags;
-	// 		}
-	// 	}
-	// }
-
-	// function addFlag(square) {
-	// 	if (isGameOver) return;
-	// 	square.addEventListener('contextmenu');
-	// }
-
+	function addFlag(square) {
+		if (isGameOver) return;
+		if (!square.classList.contains('checked') && flags < bombAmount) {
+			if (!square.classList.contains('flag')) {
+				square.classList.add('flag');
+				flags++;
+				bombAmount--;
+				let tens = bombAmount.toString().split('')[0];
+				let ones = bombAmount.toString().split('')[1];
+				flagsLeftTens.className = `num tablo-${tens} flags-left`;
+				flagsLeftOnes.className = `num tablo-${ones} flags-left`;
+				// bombAmount - flags;
+				checkForWin();
+			} else {
+				square.classList.remove('flag');
+				square.innerHTML = '';
+				flags--;
+				// flagsLeft.innerHTML = bombAmount - flags;
+			}
+		}
+	}
 	function click(square) {
 		let currentId = square.id;
 		if (isGameOver) return;

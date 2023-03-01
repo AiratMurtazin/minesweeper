@@ -195,3 +195,10 @@ body {
 	width: 26px;
 	height: 26px;
 }
+
+.flag {
+	background: url(../assets/icons/minesweeper-sprites.png) -62px 54px;
+	background-size: 240px;
+	width: 26px;
+	height: 26px;
+}
