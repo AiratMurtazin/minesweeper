@@ -18,20 +18,180 @@ body {
 }
 
 .header {
-	width: 425px;
+	width: 426px;
 	height: 56px;
 	background-color: #c0c0c0;
 	margin: 0 auto;
 	margin-top: 8px;
+	border: 3px solid;
+	border-color: #7b7b7b #fdfdfd #fdfdfd #7b7b7b;
+	display: flex;
+	align-items: center;
+	gap: 115px;
+	padding-left: 9px;
 }
+
+.table {
+	height: 426px;
+	width: 422px;
+	display: grid;
+	gap: 0;
+	/* display: flex; */
+	/* flex-wrap: wrap; */
+	margin: 0 auto;
+	margin-top: 8px;
+	border: 3px solid;
+	border-color: #7b7b7b #fdfdfd #fdfdfd #7b7b7b;
+}
+
+.valid {
+	min-height: 26px;
+	width: 26px;
+	border: 3px solid;
+	border-color: #f5f3eb #7b7b7b #7b7b7b #fff9db;
+}
+.bomb {
+	min-height: 26px;
+	width: 26px;
+	border: 3px solid;
+	border-color: #f5f3eb #7b7b7b #7b7b7b #fff9db;
+}
+.checked {
+	min-height: 26px;
+	width: 26px;
+	background-color: #bdbdbd;
+	border: 1px solid;
+	border-color: #878787;
+	text-align: center;
+	/* border: 2px solid; */
+	/* background-color: #cecab7; */
+	/* border-color: #9c998d; */
+}
+
+.tablo {
+	width: 64px;
+	height: 35px;
+	display: flex;
+}
+
+.smile {
+	width: 42px;
+	height: 40px;
+	background: url(../assets/icons/minesweeper-sprites.png) -1px -40px;
+	background-size: 225px;
+	border: none;
+}
+
+.num {
+	width: 19px;
+	height: 39px;
+}
+
+.zero-tablo {
+	background: url(../assets/icons/minesweeper-sprites.png) 20px 0;
+	background-size: 226px;
+}
+
+.one-tablo {
+	background: url(../assets/icons/minesweeper-sprites.png) -2px 0;
+	background-size: 226px;
+}
+
+.two-tablo {
+	background: url(../assets/icons/minesweeper-sprites.png) -24px 0;
+	background-size: 226px;
+}
+
+.three-tablo {
+	background: url(../assets/icons/minesweeper-sprites.png) -47px 0;
+	background-size: 226px;
+}
+
+.four-tablo {
+	background: url(../assets/icons/minesweeper-sprites.png) -69px 0;
+	background-size: 226px;
+}
+
+.five-tablo {
+	background: url(../assets/icons/minesweeper-sprites.png) -91px 0;
+	background-size: 226px;
+}
+
+.six-tablo {
+	background: url(../assets/icons/minesweeper-sprites.png) -114px 0;
+	background-size: 226px;
+}
+
+.seven-tablo {
+	background: url(../assets/icons/minesweeper-sprites.png) 88px 0;
+	background-size: 226px;
+}
+
+.eight-tablo {
+	background: url(../assets/icons/minesweeper-sprites.png) 66px 0;
+	background-size: 226px;
+}
+
+.nine-tablo {
+	background: url(../assets/icons/minesweeper-sprites.png) 43px 0;
+	background-size: 226px;
+}
+
+/* .play {
+	width: 20px;
+	height: 20px;
+} */
+
 .one {
-	width: 13px;
-	height: 24px;
-	background: url(../assets/icons/minesweeper-sprites.png) 0 0;
+	background: url(../assets/icons/minesweeper-sprites.png) -1px 26px;
+	background-size: 240px;
+	width: 26px;
+	height: 26px;
+	text-align: center;
+	/* color: #e76346; */
 }
 
 .two {
-	width: 13px;
-	height: 24px;
-	background: url(../assets/icons/minesweeper-sprites.png) -15px 0;
+	background: url(../assets/icons/minesweeper-sprites.png) -30px 26px;
+	background-size: 240px;
+	width: 26px;
+	height: 26px;
+}
+
+.three {
+	background: url(../assets/icons/minesweeper-sprites.png) -59px 26px;
+	background-size: 236px;
+	width: 26px;
+	height: 26px;
+}
+
+.four {
+	background: url(../assets/icons/minesweeper-sprites.png) -89px 26px;
+	background-size: 240px;
+	width: 26px;
+	height: 26px;
+}
+.five {
+	background: url(../assets/icons/minesweeper-sprites.png) -118px 26px;
+	background-size: 240px;
+	width: 26px;
+	height: 26px;
+}
+.six {
+	background: url(../assets/icons/minesweeper-sprites.png) -147px 26px;
+	background-size: 240px;
+	width: 26px;
+	height: 26px;
+}
+.seven {
+	background: url(../assets/icons/minesweeper-sprites.png) 62px 26px;
+	background-size: 240px;
+	width: 26px;
+	height: 26px;
+}
+.eight {
+	background: url(../assets/icons/minesweeper-sprites.png) 32px 26px;
+	background-size: 240px;
+	width: 26px;
+	height: 26px;
 }
