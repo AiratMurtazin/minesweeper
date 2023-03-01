@@ -1,15 +1,78 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const output = document.querySelector('.table');
+	// const time = document.querySelector('.time');
+	const timer = document.querySelector('.timer');
+	const first = document.querySelector('.first');
+	const second = document.querySelector('.second');
+	const third = document.querySelector('.third');
 	let width = 16;
 	let bombAmount = 40;
 	let flags = 0;
 	let squares = [];
 	let isGameOver = false;
-
+	// let nums = [
+	// 	'one',
+	// 	'two',
+	// 	'three',
+	// 	'four',
+	// 	'five',
+	// 	'six',
+	// 	'seven',
+	// 	'eight',
+	// 	'nine',
+	// ];
 	const grid = { rows: 16, cols: 16 };
 	const total = grid.rows * grid.cols;
 
 	createGrid(total);
+	let count = 0;
+	let tens = 0;
+	let hunds = 0;
+	function startTimer() {
+		if (count <= 9) {
+			first.className = `num tablo-${count++} first`;
+		} else {
+			count = 1;
+			first.className = `num tablo-${count++} first`;
+		}
+		setInterval(() => {
+			if (count <= 9) {
+				first.className = `num tablo-${count++} first`;
+			} else {
+				count = 1;
+				first.className = `num tablo-${count++} first`;
+				if (tens <= 9) {
+					second.className = `num tablo-${tens++} second`;
+				} else {
+					tens = 1;
+					second.className = `num tablo-${tens++} second`;
+					if (hunds <= 9) {
+						third.className = `num tablo-${hunds++} third`;
+					}
+				}
+			}
+		}, 1000);
+		setTimeout(() => {
+			second.className = `num tablo-${tens++} second`;
+		}, 10000);
+		setTimeout(() => {
+			third.className = `num tablo-${hunds++} second`;
+		}, 100000);
+		// setInterval(() => {}, 10000);
+	}
+
+	function onceFunc(func) {
+		let called = false;
+		return function () {
+			if (!called) {
+				called = true;
+				return func();
+			}
+			return;
+		};
+	}
+
+	startTimer = onceFunc(startTimer);
 
 	function createGrid(tot) {
 		const bombsArray = Array(bombAmount).fill('bomb');
@@ -26,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			square.addEventListener('click', function (e) {
 				click(square);
+				startTimer();
 			});
 
 			output.style.setProperty(
@@ -153,23 +217,28 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	createBoard();
 
-	function addFlag(square) {
-		if (isGameOver) return;
-		if (!square.classList.contains('checked') && flags < bombAmount) {
-			if (!square.classList.contains('flag')) {
-				square.classList.add('flag');
-				square.innerHTML = ' 🚩';
-				flags++;
-				// flagsLeft.innerHTML = bombAmount - flags;
-				checkForWin();
-			} else {
-				square.classList.remove('flag');
-				square.innerHTML = '';
-				flags--;
-				// flagsLeft.innerHTML = bombAmount - flags;
-			}
-		}
-	}
+	// function addFlag(square) {
+	// 	if (isGameOver) return;
+	// 	if (!square.classList.contains('checked') && flags < bombAmount) {
+	// 		if (!square.classList.contains('flag')) {
+	// 			square.classList.add('flag');
+	// 			square.innerHTML = ' 🚩';
+	// 			flags++;
+	// 			// flagsLeft.innerHTML = bombAmount - flags;
+	// 			checkForWin();
+	// 		} else {
+	// 			square.classList.remove('flag');
+	// 			square.innerHTML = '';
+	// 			flags--;
+	// 			// flagsLeft.innerHTML = bombAmount - flags;
+	// 		}
+	// 	}
+	// }
+
+	// function addFlag(square) {
+	// 	if (isGameOver) return;
+	// 	square.addEventListener('contextmenu');
+	// }
 
 	function click(square) {
 		let currentId = square.id;

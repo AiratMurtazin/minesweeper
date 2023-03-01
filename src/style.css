@@ -87,52 +87,52 @@ body {
 	height: 39px;
 }
 
-.zero-tablo {
+.tablo-0 {
 	background: url(../assets/icons/minesweeper-sprites.png) 20px 0;
 	background-size: 226px;
 }
 
-.one-tablo {
+.tablo-1 {
 	background: url(../assets/icons/minesweeper-sprites.png) -2px 0;
 	background-size: 226px;
 }
 
-.two-tablo {
+.tablo-2 {
 	background: url(../assets/icons/minesweeper-sprites.png) -24px 0;
 	background-size: 226px;
 }
 
-.three-tablo {
+.tablo-3 {
 	background: url(../assets/icons/minesweeper-sprites.png) -47px 0;
 	background-size: 226px;
 }
 
-.four-tablo {
+.tablo-4 {
 	background: url(../assets/icons/minesweeper-sprites.png) -69px 0;
 	background-size: 226px;
 }
 
-.five-tablo {
+.tablo-5 {
 	background: url(../assets/icons/minesweeper-sprites.png) -91px 0;
 	background-size: 226px;
 }
 
-.six-tablo {
+.tablo-6 {
 	background: url(../assets/icons/minesweeper-sprites.png) -114px 0;
 	background-size: 226px;
 }
 
-.seven-tablo {
+.tablo-7 {
 	background: url(../assets/icons/minesweeper-sprites.png) 88px 0;
 	background-size: 226px;
 }
 
-.eight-tablo {
+.tablo-8 {
 	background: url(../assets/icons/minesweeper-sprites.png) 66px 0;
 	background-size: 226px;
 }
 
-.nine-tablo {
+.tablo-9 {
 	background: url(../assets/icons/minesweeper-sprites.png) 43px 0;
 	background-size: 226px;
 }
