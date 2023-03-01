@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const third = document.querySelector('.third');
 	const flagsLeftTens = document.querySelector('.flags-left-tens');
 	const flagsLeftOnes = document.querySelector('.flags-left-ones');
+	const smile = document.querySelector('.smile');
 	let width = 16;
 	let bombAmount = 40;
 	let flags = 0;
@@ -232,13 +233,11 @@ document.addEventListener('DOMContentLoaded', () => {
 				let ones = bombAmount.toString().split('')[1];
 				flagsLeftTens.className = `num tablo-${tens} flags-left`;
 				flagsLeftOnes.className = `num tablo-${ones} flags-left`;
-				// bombAmount - flags;
 				checkForWin();
 			} else {
 				square.classList.remove('flag');
 				square.innerHTML = '';
 				flags--;
-				// flagsLeft.innerHTML = bombAmount - flags;
 			}
 		}
 	}
@@ -331,12 +330,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	function gameOver(square) {
 		// result.innerHTML = 'BOOM! Game Over!';
 		isGameOver = true;
-
+		smile.classList.add('sad');
 		squares.forEach(square => {
 			if (square.classList.contains('bomb')) {
-				square.innerHTML = '💣';
-				square.classList.remove('bomb');
-				square.classList.add('checked');
+				console.log(square);
+				square.classList.add('bomb-show');
+				// square.classList.remove('bomb-red');
+				// square.classList.add('bomb-show');
 			}
 		});
 	}
@@ -354,6 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (matches === bombAmount) {
 				// result.innerHTML = 'YOU WIN!';
 				isGameOver = true;
+				smile.classList.add('cool');
 			}
 		}
 	}

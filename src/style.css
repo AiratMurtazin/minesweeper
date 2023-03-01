@@ -202,3 +202,33 @@ body {
 	width: 26px;
 	height: 26px;
 }
+
+.bomb-show {
+	background: url(../assets/icons/minesweeper-sprites.png) -151px 53px;
+	background-size: 240px;
+	width: 26px;
+	height: 26px;
+}
+
+.bomb-red {
+	background: url(../assets/icons/minesweeper-sprites.png) -180px 53px;
+	background-size: 240px;
+	width: 26px;
+	height: 26px;
+}
+
+.sad {
+	width: 42px;
+	height: 40px;
+	background: url(../assets/icons/minesweeper-sprites.png) 49px -40px;
+	background-size: 225px;
+	border: none;
+}
+
+.cool {
+	width: 42px;
+	height: 40px;
+	background: url(../assets/icons/minesweeper-sprites.png) 93px -40px;
+	background-size: 225px;
+	border: none;
+}
