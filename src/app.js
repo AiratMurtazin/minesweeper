@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let count = 0;
 	let tens = 0;
 	let hunds = 0;
-	//TODO stop the timer
+
 	function startTimer() {
 		if (count <= 9) {
 			first.className = `num tablo-${count++} first`;
@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 
 			square.addEventListener('click', function (e) {
+				if (isGameOver) return;
 				click(square);
 				startTimer();
 			});
@@ -250,7 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				let ones = bombAmount.toString().split('')[1];
 				flagsLeftTens.className = `num tablo-${tens} flags-left`;
 				flagsLeftOnes.className = `num tablo-${ones} flags-left`;
-				checkForWin();
 			} else if (square.classList.contains('flag')) {
 				square.classList.remove('flag');
 				square.classList.add('question');
@@ -362,6 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				const newSquare = document.getElementById(newId);
 				click(newSquare);
 			}
+			checkForWin();
 		}, 10);
 	}
 
@@ -381,26 +382,35 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	}
-	// squares.forEach(square => {
-	// 	if (square.classList.contains('bomb')) {
-	// 		square.classList.add('bomb-show');
-	// 	}
-	// });
-	function checkForWin() {
-		let matches = 0;
 
-		for (let i = 0; i < squares.length; i++) {
-			if (
-				squares[i].classList.contains('flag') &&
-				squares[i].classList.contains('bomb')
-			) {
-				matches++;
+	function checkForWin() {
+		let validsArr = squares.filter(square => {
+			if (square.classList.contains('valid')) {
+				return square;
 			}
-			if (matches === bombAmount) {
-				// result.innerHTML = 'YOU WIN!';
-				isGameOver = true;
-				smile.classList.add('cool');
-			}
+		});
+		if (
+			validsArr.filter(v => !v.classList.contains('checked')).length === 0 &&
+			!isGameOver
+		) {
+			smile.classList.remove('sad');
+			smile.classList.add('cool');
+			isGameOver = true;
 		}
 	}
+	// 	let matches = 0;
+
+	// 	for (let i = 0; i < squares.length; i++) {
+	// 		if (
+	// 			squares[i].classList.contains('flag') &&
+	// 			squares[i].classList.contains('bomb')
+	// 		) {
+	// 			matches++;
+	// 		}
+	// 		if (matches === bombAmount) {
+	// 			isGameOver = true;
+	// 			smile.classList.add('cool');
+	// 		}
+	// 	}
+	// }
 });
