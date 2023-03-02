@@ -93,6 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			square.setAttribute('id', i);
 			squares.push(square);
 
+			square.addEventListener('mousedown', () => {
+				smile.classList.add('shock');
+			});
+			square.addEventListener('mouseup', () => {
+				smile.classList.remove('shock');
+			});
+
 			square.addEventListener('click', function (e) {
 				click(square);
 				startTimer();
@@ -259,7 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	function click(square) {
 		let currentId = square.id;
 		clicks++;
-		console.log(clicks);
 
 		if (
 			square.classList.contains('checked') ||
@@ -353,6 +359,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		}, 10);
 	}
+
+	smile.addEventListener('click', () => {
+		document.location.reload();
+	});
 
 	function gameOver(square) {
 		// result.innerHTML = 'BOOM! Game Over!';

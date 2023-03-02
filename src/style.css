@@ -239,3 +239,11 @@ body {
 	width: 26px;
 	height: 26px;
 }
+
+.shock {
+	width: 42px;
+	height: 40px;
+	background: url(../assets/icons/minesweeper-sprites.png) -88px -40px;
+	background-size: 225px;
+	border: none;
+}
