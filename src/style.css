@@ -232,3 +232,10 @@ body {
 	background-size: 225px;
 	border: none;
 }
+
+.question {
+	background: url(../assets/icons/minesweeper-sprites.png) -93px 53px;
+	background-size: 240px;
+	width: 26px;
+	height: 26px;
+}
