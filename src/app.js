@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			count = 1;
 			first.className = `num tablo-${count++} first`;
 		}
-		setInterval(() => {
+		const sec = setInterval(() => {
 			if (count <= 9) {
 				first.className = `num tablo-${count++} first`;
 			} else {
@@ -64,7 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			third.className = `num tablo-${hunds++} second`;
 		}, 100000);
 
-		// setInterval(() => {}, 10000);
+		setInterval(() => {
+			if (isGameOver) {
+				clearInterval(sec);
+				return;
+			}
+		}, 10);
 	}
 
 	function onceFunc(func) {
@@ -365,8 +370,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	function gameOver(square) {
-		// result.innerHTML = 'BOOM! Game Over!';
-
 		isGameOver = true;
 		smile.classList.add('sad');
 		if (square.classList.contains('bomb')) {
