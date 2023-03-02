@@ -14,17 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	let squares = [];
 	let isGameOver = false;
 	let clicks = 0;
-	// let nums = [
-	// 	'one',
-	// 	'two',
-	// 	'three',
-	// 	'four',
-	// 	'five',
-	// 	'six',
-	// 	'seven',
-	// 	'eight',
-	// 	'nine',
-	// ];
 	const grid = { rows: 16, cols: 16 };
 	const total = grid.rows * grid.cols;
 
@@ -245,7 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			) {
 				square.classList.remove('question');
 				square.classList.add('flag');
-				// flags++;
 				bombAmount--;
 				let tens = bombAmount.toString().split('')[0];
 				let ones = bombAmount.toString().split('')[1];
@@ -256,14 +244,12 @@ document.addEventListener('DOMContentLoaded', () => {
 				square.classList.add('question');
 			} else {
 				square.classList.remove('question');
-				// square.classList.remove('flag');
 				bombAmount++;
 				let tens = bombAmount.toString().split('')[0];
 				let ones = bombAmount.toString().split('')[1];
 				flagsLeftTens.className = `num tablo-${tens} flags-left`;
 				flagsLeftOnes.className = `num tablo-${ones} flags-left`;
 				square.innerHTML = '';
-				// flags--;
 			}
 		}
 	}
@@ -274,7 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if (
 			square.classList.contains('checked') ||
-			square.classList.contains('flag')
+			square.classList.contains('flag') ||
+			square.classList.contains('question')
 		)
 			return;
 		if (square.classList.contains('bomb') && clicks !== 1) {
