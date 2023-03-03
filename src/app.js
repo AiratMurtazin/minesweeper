@@ -101,8 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			output.style.setProperty(
 				`grid-template-columns`,
-				`repeat(${grid.cols}, 26px)`
+				`repeat(${grid.cols}, 1fr)`
 			);
+
 			square.oncontextmenu = function (e) {
 				e.preventDefault();
 				addFlag(square);
